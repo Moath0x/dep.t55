@@ -1,0 +1,7 @@
+streamlit
+streamlit-webrtc
+opencv-python
+numpy
+dlib
+imutils
+tensorflow
