@@ -1,7 +1,8 @@
+dlib==19.22.0
 streamlit
 streamlit-webrtc
 opencv-python
 numpy
-dlib
+dlib==19.22.0
 imutils
 tensorflow
