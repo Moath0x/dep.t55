@@ -1,4 +1,4 @@
-import streamlit as st
+خيار اخر import streamlit as st
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import cv2
 import numpy as np
@@ -74,7 +74,6 @@ class VideoTransformer(VideoTransformerBase):
                 if self.sleep > 6:
                     self.status = "SLEEPING !!!"
                     self.color = (255, 0, 0)
-                    st.sidebar.write("Student is sleeping!")
             elif left_blink == 1 or right_blink == 1:
                 self.sleep = 0
                 self.active = 0
@@ -82,7 +81,6 @@ class VideoTransformer(VideoTransformerBase):
                 if self.drowsy > 6:
                     self.status = "Drowsy !"
                     self.color = (0, 0, 255)
-                    st.sidebar.write("Student is drowsy!")
             else:
                 self.drowsy = 0
                 self.sleep = 0
@@ -90,12 +88,11 @@ class VideoTransformer(VideoTransformerBase):
                 if self.active > 6:
                     self.status = "Active "
                     self.color = (0, 255, 0)
-                    st.sidebar.write("Student is active!")
 
             for (x, y, w, h) in tf_faces:
                 roi_gray = gray[y:y + h, x:x + w]
                 roi_gray = cv2.resize(roi_gray, (48, 48))
-                roi = roi_gray.astype('float') / 255
+                roi = roi_gray.astype('float') / 255.0
                 roi = np.expand_dims(roi, axis=-1)
                 roi = np.expand_dims(roi, axis=0)
                 predictions = model.predict(roi)[0]
@@ -141,6 +138,3 @@ with col1:
 with col2:
     st.subheader("Screen 2")
     webrtc_streamer(key="user_screen_2", video_transformer_factory=VideoTransformer, async_transform=True)
-with col1:
-    st.subheader("+3 more")
-    st.image("https://via.placeholder.com/150?text=+more")
