@@ -1,9 +1,7 @@
-cmake
-face-recognition
-opencv-python
-tensorflow
-dlib
+numpy
 streamlit
 streamlit-webrtc
-numpy
+opencv-python-headless
 imutils
+tensorflow
+dlib
