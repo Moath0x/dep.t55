@@ -1,7 +1,7 @@
-numpy
 streamlit
 streamlit-webrtc
 opencv-python-headless
 imutils
 tensorflow
+cmake
 dlib
