@@ -1,4 +1,4 @@
-خيار اخر import streamlit as st
+import streamlit as st
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import cv2
 import numpy as np
