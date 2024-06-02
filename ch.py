@@ -8,8 +8,8 @@ import tensorflow as tf
 
 # Initialize dlib's face detector and landmark predictor
 detector = dlib.get_frontal_face_detector()
-predictor_path = r'C:\\Users\\Moath\\Downloads\\final project\\shape_predictor_68_face_landmarks.dat'
-model_path = r'C:\\Users\\Moath\\Downloads\\CLASS_GUARD\\Emotions.h5'
+predictor_path = ('\\Users\\Moath\\Downloads\\final project\\shape_predictor_68_face_landmarks.dat')
+predictor_path = ('shape_predictor_68_face_landmarks.dat')
 
 try:
     predictor = dlib.shape_predictor(predictor_path)
